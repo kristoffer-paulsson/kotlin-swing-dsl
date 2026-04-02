@@ -1,0 +1,19 @@
+# Gradle
+.gradle/
+build/
+build.gradle
+build.gradle.kts
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Kotlin
+*.kotlin_metadata
+
+# Java
+*.class
+
+# macOS
+.DS_Store
