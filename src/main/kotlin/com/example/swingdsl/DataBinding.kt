@@ -1,5 +1,3 @@
-// DataBinding.kt
-
 package com.example.swingdsl
 
 // Represents a bound property that can notify listeners about changes.

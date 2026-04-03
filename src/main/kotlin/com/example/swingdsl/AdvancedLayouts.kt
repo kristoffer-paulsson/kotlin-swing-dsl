@@ -1,4 +1,20 @@
-data class GridConstraints(val gridx: Int = 0, val gridy: Int = 0, val gridwidth: Int = 1, val gridheight: Int = 1, val weightx: Double = 0.0, val weighty: Double = 0.0, val anchor: Int = 0, val fill: Int = 0, val ipadx: Int = 0, val ipady: Int = 0, val insets: Insets = Insets(0, 0, 0, 0))
+package  com.example.swingdsl
+
+import java.awt.Insets
+
+data class GridConstraints(
+    val gridx: Int = 0,
+    val gridy: Int = 0,
+    val gridwidth: Int = 1,
+    val gridheight: Int = 1,
+    val weightx: Double = 0.0,
+    val weighty: Double = 0.0,
+    val anchor: Int = 0,
+    val fill: Int = 0,
+    val ipadx: Int = 0,
+    val ipady: Int = 0,
+    val insets: Insets = Insets(0, 0, 0, 0)
+)
 
 class FormLayoutBuilder {
     private val constraints = mutableListOf<GridConstraints>()

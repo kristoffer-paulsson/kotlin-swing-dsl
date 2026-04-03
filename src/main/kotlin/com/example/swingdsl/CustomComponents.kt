@@ -1,3 +1,5 @@
+package  com.example.swingdl
+
 // CustomComponents.kt
 
 interface CustomComponent {

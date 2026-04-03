@@ -36,7 +36,7 @@ fun JPanel.comboBox(items: Array<String>, init: JComboBox<String>.() -> Unit = {
 }
 
 fun JPanel.spinner(value: Int, init: JSpinner.() -> Unit = {}): JSpinner {
-    val spinner = JSpinner SpinnerNumberModel(value, 0, 100, 1)
+    val spinner = JSpinner(SpinnerNumberModel(value, 0, 100, 1))
     spinner.init()
     this.add(spinner)
     return spinner

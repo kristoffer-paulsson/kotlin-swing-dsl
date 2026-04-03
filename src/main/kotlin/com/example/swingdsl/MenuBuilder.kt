@@ -1,6 +1,6 @@
 package com.example.swingdsl
 
-class MenuBuilder {
+/*class MenuBuilder {
     private val menuBar = MenuBar()
 
     fun menuBar(init: MenuBuilder.() -> Unit) {
@@ -43,4 +43,4 @@ class MenuBar {
 }
 
 open class MenuItem(val name: String)
-class Menu(name: String, val items: List<MenuItem>) : MenuItem(name)
+class Menu(name: String, val items: List<MenuItem>) : MenuItem(name)*/

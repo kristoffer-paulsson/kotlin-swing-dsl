@@ -18,13 +18,14 @@ class ValidationRules(private val rules: List<(String) -> ValidationResult>) {
     fun validate(input: String): ValidationResult {
         return rules.map { it(input) }.fold(ValidationResult.Valid) { acc, result ->
             when {
-                acc is ValidationResult.Invalid -> acc
+                false -> acc
                 result is ValidationResult.Invalid -> result
                 else -> ValidationResult.Valid
-            }
+            } as ValidationResult.Valid
         }
     }
 }
+
 
 // Common validators
 fun notEmpty(): (String) -> ValidationResult = { input -> 
@@ -50,14 +51,12 @@ fun rangeInt(min: Int, max: Int): (String) -> ValidationResult = { input ->
         else ValidationResult.Invalid(listOf("Value must be between $min and $max"))
     } ?: ValidationResult.Invalid(listOf("Input is not an integer")) 
 }
-}
 
 fun positive(): (String) -> ValidationResult = { input ->
     input.toIntOrNull()?.let { value ->
         if (value > 0) ValidationResult.Valid 
         else ValidationResult.Invalid(listOf("Value must be positive"))
     } ?: ValidationResult.Invalid(listOf("Input is not an integer"))
-}
 }
 
 fun custom(validator: (String) -> ValidationResult): (String) -> ValidationResult = { input -> validator(input) }
@@ -78,4 +77,4 @@ class ComponentValidator(val validationContext: ValidationContext) {
 }
 
 // Holds the validation context.
-class ValidationContext(val componentName: String) {}
+class ValidationContext(val componentName: String)
